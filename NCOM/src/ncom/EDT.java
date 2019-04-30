@@ -59,7 +59,7 @@ public class EDT extends javax.swing.JFrame {
 
         jLabelNcom.setFont(new java.awt.Font("ISOCPEUR", 1, 30)); // NOI18N
         jLabelNcom.setText("TRANSFORMACIONES");
-        getContentPane().add(jLabelNcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, 40));
+        getContentPane().add(jLabelNcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Número Complejo : ");

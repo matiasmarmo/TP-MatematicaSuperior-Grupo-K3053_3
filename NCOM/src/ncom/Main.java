@@ -64,6 +64,11 @@ public class Main extends javax.swing.JFrame {
         OB.setText("OPERACIONES BASICAS");
         OB.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         OB.setPreferredSize(new java.awt.Dimension(150, 25));
+        OB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OBMouseClicked(evt);
+            }
+        });
         getContentPane().add(OB, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 180, 185, 50));
 
         OA.setText("OPERACIONES AVANZADAS");
@@ -112,6 +117,13 @@ public class Main extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void OBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OBMouseClicked
+        // TODO add your handling code here:
+       OB ob = new OB();
+       ob.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_OBMouseClicked
 
     /**
      * @param args the command line arguments

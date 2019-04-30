@@ -46,8 +46,8 @@ public class Numero {
             }else{ 
                 temp2 = atan(b/a) + PI;
             }
-            a = floor(temp1*100)/100;
-            b = floor(temp2*100)/100;
+            a = temp1;
+            b = temp2;
             tipo = true;
         }
     }
@@ -55,14 +55,15 @@ public class Numero {
         if(tipo == true){
             double temp1 = a*cos(b);
             double temp2 = a*sin(b);
-            temp1 = floor(temp1*100)/100;
-            temp2 = floor(temp2*100)/100;
             a = temp1;
             b = temp2;
             tipo = false;
         }
     }
-    
+    public void redondear(){
+            a = floor(a*100)/100;
+            b = floor(b*100)/100;
+    }
     public void transformar(){
         if(tipo == false){
             this.aPolar();
