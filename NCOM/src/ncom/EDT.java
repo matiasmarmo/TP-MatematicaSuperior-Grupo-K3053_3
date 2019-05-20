@@ -164,6 +164,7 @@ public class EDT extends javax.swing.JFrame {
                     tipo = false;
                     Numero numero = new Numero(parteReal,parteImaginaria,tipo);
                     numero.transformar();
+                    numero.redondear();
                     resultado.setText("[" + numero.a + "," + numero.b + "]");
                     break;
                 }
@@ -175,6 +176,7 @@ public class EDT extends javax.swing.JFrame {
                     tipo = true;
                     Numero numero = new Numero(parteReal,parteImaginaria,tipo);
                     numero.transformar();
+                    numero.redondear();
                     resultado.setText("(" + numero.a + "," + numero.b + ")");
                     break;
                 }

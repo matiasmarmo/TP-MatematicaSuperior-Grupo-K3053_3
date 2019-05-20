@@ -72,6 +72,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(OB, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 180, 185, 50));
 
         OA.setText("OPERACIONES AVANZADAS");
+        OA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OAActionPerformed(evt);
+            }
+        });
         getContentPane().add(OA, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 185, 50));
 
         SF.setText("SUMA DE FASORES");
@@ -119,11 +124,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void OBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OBMouseClicked
-        // TODO add your handling code here:
        OB ob = new OB();
        ob.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_OBMouseClicked
+
+    private void OAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OAActionPerformed
+       OA oa = new OA();
+       oa.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_OAActionPerformed
 
     /**
      * @param args the command line arguments

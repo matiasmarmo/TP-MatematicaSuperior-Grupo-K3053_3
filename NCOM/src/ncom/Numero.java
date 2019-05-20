@@ -5,6 +5,7 @@
  */
 package ncom;
 
+import java.awt.List;
 import static java.lang.Math.PI;
 import static java.lang.Math.atan;
 import static java.lang.Math.cos;
@@ -12,11 +13,9 @@ import static java.lang.Math.floor;
 import static java.lang.Math.pow;
 import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
-/**
- *
- * @author Adriana
- */
 public class Numero {
     public double a;
     public double b;
@@ -72,4 +71,58 @@ public class Numero {
             this.aBinomica();
         }
     }
+    public void hacerPotencia(double exponente){
+        if(tipo == false){
+            this.transformar();
+        }
+        this.a = Math.pow(this.a, exponente);
+        this.b = this.b * exponente; 
+        while( b > 2*PI ){
+            this.b = this.b - 2*PI;
+        }
+        while( b < 0 ){
+            this.b = this.b + 2*PI;
+        }
+        this.redondear();
+    }
+    public ArrayList<String> hacerRaiz(double indice){
+        ArrayList<String> resultados = new ArrayList<String>();
+        int i;
+        String resultado;
+        if(tipo == false){
+            this.transformar();
+        }
+        this.a = Math.pow(this.a, 1/indice);
+        for(i=0;i<indice;i++){
+            resultado ="W" + i + " = [ " + floor(this.a*100)/100 + " , " + floor((b+2*PI*i)/indice*100)/100 + " ]";
+            resultados.add(resultado);
+        }
+        return resultados;
+    }
+    public ArrayList<String> hacerRaizPrimitiva(int indice){
+        int removidos = 0;
+        ArrayList<String> resultados = this.hacerRaiz((double) indice);
+        for(int i=0; i<indice;i++){
+            if( this.obtener_mcd(i,indice) != 1 ){
+                resultados.remove(i-removidos);
+                removidos++;
+            }
+        }
+        return resultados;
+    }
+    private int obtener_mcd(int a, int b) { //Por Euclides
+       if(b==0)
+           return a;
+       else
+           return obtener_mcd(b, a % b);
+    } 
+    public double cantidadDePrimitivas(int indice){
+       double primitivas = 0; 
+       for(int i=0; i<indice;i++){
+            if( this.obtener_mcd(i,indice) != 1 ){
+                primitivas++;
+            }
+        }   
+       return primitivas;
+   }
 }

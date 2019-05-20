@@ -65,5 +65,14 @@ public class parser {
         }
         return true;
     }
+    public boolean esNatural(){
+        int i;
+        for(i=0;i<this.mensaje.length();i++){
+            if(mensaje.charAt(i) < '0' ||  mensaje.charAt(i) > '9'){  
+                return false;
+            } 
+        }
+        return true;
+    }
     
 }

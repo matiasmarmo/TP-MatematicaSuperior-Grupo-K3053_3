@@ -170,14 +170,14 @@ public class OB extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(23, 23, 23))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -233,6 +233,7 @@ public class OB extends javax.swing.JFrame {
                             result.a-=num.a;
                             result.b-=num.b;
                         }
+                        result.redondear();
                         break;
                     }
                 case 2:
@@ -241,7 +242,6 @@ public class OB extends javax.swing.JFrame {
                         tipo = true;
                         num = new Numero(parteReal,parteImaginaria,tipo);
                         num.transformar();
-                        num.redondear();
                         if(b0 || i==0){
                             result.a+=num.a;
                             result.b+=num.b;
@@ -249,6 +249,7 @@ public class OB extends javax.swing.JFrame {
                             result.a-=num.a;
                             result.b-=num.b;
                         }
+                        result.redondear();
                         break;
                     }
                     default:
@@ -290,8 +291,7 @@ public class OB extends javax.swing.JFrame {
                         //BINOMICA                 
                         tipo = false;
                         num = new Numero(parteReal,parteImaginaria,tipo);
-                        num.transformar();
-                        num.redondear();
+                        num.transformar();          
                         if(i==0){
                             result.a+=num.a;
                             result.b+=num.b;
@@ -303,6 +303,7 @@ public class OB extends javax.swing.JFrame {
                             result.a/=num.a;
                             result.b-=num.b;
                         }
+                        result.redondear();
                         break;
                     }
                 case 2:
@@ -321,6 +322,7 @@ public class OB extends javax.swing.JFrame {
                             result.a/=num.a;
                             result.b-=num.b;
                         }
+                        result.redondear();
                         break;
                     }
                     default:
