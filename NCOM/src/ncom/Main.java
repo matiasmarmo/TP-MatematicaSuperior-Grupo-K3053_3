@@ -80,6 +80,11 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(OA, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 185, 50));
 
         SF.setText("SUMA DE FASORES");
+        SF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SFMouseClicked(evt);
+            }
+        });
         getContentPane().add(SF, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 250, 185, 50));
 
         jButton5.setText("EXIT");
@@ -134,6 +139,12 @@ public class Main extends javax.swing.JFrame {
        oa.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_OAActionPerformed
+
+    private void SFMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SFMouseClicked
+       SF sf = new SF();
+       sf.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_SFMouseClicked
 
     /**
      * @param args the command line arguments

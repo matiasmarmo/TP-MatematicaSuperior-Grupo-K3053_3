@@ -252,8 +252,8 @@ public class OA extends javax.swing.JFrame {
     private void btn_calcular_potencia_nsimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcular_potencia_nsimaActionPerformed
         String _base = base.getText();
         String _exponente = exponente.getText();
-        parser baseOk = new parser(_base);
-        parser exponenteOk = new parser(_exponente);
+        parser baseOk = new parser(_base,false);
+        parser exponenteOk = new parser(_exponente,false);
         if("".equals(_base) || "".equals(_exponente)){ 
             for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
              JOptionPane.showMessageDialog( null,
@@ -332,8 +332,8 @@ public class OA extends javax.swing.JFrame {
         String _radicando = radicando.getText();
         String _indice = indice.getText();
         for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
-        parser radicandoOk = new parser(_radicando);
-        parser indiceOk = new parser(_indice);
+        parser radicandoOk = new parser(_radicando,false);
+        parser indiceOk = new parser(_indice,false);
         if("".equals(_radicando) || "".equals(_indice)){
             for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
              JOptionPane.showMessageDialog( null,
@@ -403,8 +403,8 @@ public class OA extends javax.swing.JFrame {
         String _radicandoPrimitiva = radicando.getText();
         String _indicePrimitiva = indice.getText();
         for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
-        parser radicandoOk = new parser(_radicandoPrimitiva);
-        parser indiceOk = new parser(_indicePrimitiva);
+        parser radicandoOk = new parser(_radicandoPrimitiva,false);
+        parser indiceOk = new parser(_indicePrimitiva,false);
         if("".equals(_radicandoPrimitiva) || "".equals(_indicePrimitiva)){
              for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
              JOptionPane.showMessageDialog( null,

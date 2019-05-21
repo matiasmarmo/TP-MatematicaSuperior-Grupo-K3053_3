@@ -201,7 +201,7 @@ public class OB extends javax.swing.JFrame {
         public void sumaResta(boolean b0) {
             String nro1 = numero1.getText();
             String nro2 = numero2.getText();
-            parser pars = new parser(nro1);
+            parser pars = new parser(nro1, false);
             String datos = nro1.substring(1,nro1.length()-1);
             String complejos[] = datos.split(",");
 
@@ -214,7 +214,7 @@ public class OB extends javax.swing.JFrame {
 
             for(int i=0; i<2; i++) { 
             if(i==1){
-                pars = new parser(nro2);
+                pars = new parser(nro2, false);
                 datos = nro2.substring(1,nro2.length()-1);
                 complejos = datos.split(",");
             }
@@ -266,7 +266,7 @@ public class OB extends javax.swing.JFrame {
         public void multiplicaDivide(boolean b0) {
             String nro1 = numero1.getText();
             String nro2 = numero2.getText();
-            parser pars = new parser(nro1);
+            parser pars = new parser(nro1,false);
             String datos = nro1.substring(1,nro1.length()-1);
             String complejos[] = datos.split(",");
 
@@ -279,7 +279,7 @@ public class OB extends javax.swing.JFrame {
 
             for(int i=0; i<2; i++) { 
             if(i==1){
-                pars = new parser(nro2);
+                pars = new parser(nro2,false);
                 datos = nro2.substring(1,nro2.length()-1);
                 complejos = datos.split(",");
             }

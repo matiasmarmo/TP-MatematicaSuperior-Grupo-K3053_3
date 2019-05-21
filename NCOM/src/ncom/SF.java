@@ -14,12 +14,12 @@ import javax.swing.JTextField;
  *
  * @author Adriana
  */
-public class EDT extends javax.swing.JFrame {
+public class SF extends javax.swing.JFrame {
 
     /**
      * Creates new form EDT
      */
-    public EDT() {
+    public SF() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -41,8 +41,13 @@ public class EDT extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabelNcom = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        numeroIngresado = new javax.swing.JTextField();
-        btn_transformar = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        fasor1 = new javax.swing.JTextField();
+        fasor2 = new javax.swing.JTextField();
+        btn_sumarFasores = new javax.swing.JButton();
         resultado = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -53,34 +58,57 @@ public class EDT extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel3");
 
+        jLabelNcom.setFont(new java.awt.Font("ISOCPEUR", 1, 30)); // NOI18N
+        jLabelNcom.setText("TRANSFORMACIONES");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelNcom.setFont(new java.awt.Font("ISOCPEUR", 1, 30)); // NOI18N
-        jLabelNcom.setText("TRANSFORMACIONES");
-        getContentPane().add(jLabelNcom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 40));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Número Complejo : ");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 132, -1, -1));
+        jLabel1.setText("Fasor 1 :");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
-        numeroIngresado.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
-        numeroIngresado.addActionListener(new java.awt.event.ActionListener() {
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setText("Fasor 2 :");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jLabel7.setText("Nota: los fasores se deben escribir de la forma:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 290, -1));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jLabel8.setText("Ejemplos: 3*cos(5t+3.14) ó 5*sen(5t+1.57)");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 290, 20));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jLabel9.setText("ó 1*sen(8t+0.78) ó 5*sen(1t+0)");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 210, -1));
+
+        fasor1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        fasor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numeroIngresadoActionPerformed(evt);
+                fasor1ActionPerformed(evt);
             }
         });
-        getContentPane().add(numeroIngresado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 174, -1));
+        getContentPane().add(fasor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 210, 30));
 
-        btn_transformar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btn_transformar.setText("TRANSFORMAR");
-        btn_transformar.addActionListener(new java.awt.event.ActionListener() {
+        fasor2.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        fasor2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_transformarActionPerformed(evt);
+                fasor2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_transformar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
+        getContentPane().add(fasor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 210, 30));
+
+        btn_sumarFasores.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btn_sumarFasores.setText("SUMAR FASORES");
+        btn_sumarFasores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sumarFasoresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_sumarFasores, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
 
         resultado.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         resultado.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +116,11 @@ public class EDT extends javax.swing.JFrame {
                 resultadoActionPerformed(evt);
             }
         });
-        getContentPane().add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 179, -1));
+        getContentPane().add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 210, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Resultado : ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 263, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
         jButton1.setText("ATRAS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -146,53 +174,105 @@ public class EDT extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_transformarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_transformarActionPerformed
-        String num = numeroIngresado.getText();
-        parser pars = new parser(num,false);
-        String datos = num.substring(1,num.length()-1);
-        String complejos[] = datos.split(",");
-        double parteReal;
-        double parteImaginaria;
-        boolean tipo;
-        switch (pars.armarNumero()) {
-            case 1:
-                {
-                    //BINOMICA
-                    parteReal = Double.parseDouble(complejos[0]);
-                    parteImaginaria = Double.parseDouble(complejos[1]);
-                    tipo = false;
-                    Numero numero = new Numero(parteReal,parteImaginaria,tipo);
-                    numero.transformar();
-                    numero.redondear();
-                    resultado.setText("[" + numero.a + "," + numero.b + "]");
-                    break;
-                }
-            case 2:
-                {
-                    //POLAR
-                    parteReal = Double.parseDouble(complejos[0]);
-                    parteImaginaria = Double.parseDouble(complejos[1]);
-                    tipo = true;
-                    Numero numero = new Numero(parteReal,parteImaginaria,tipo);
-                    numero.transformar();
-                    numero.redondear();
-                    resultado.setText("(" + numero.a + "," + numero.b + ")");
-                    break;
-                }
-            default:
-                JOptionPane.showMessageDialog( null,
-                        "Valor ingresado incorrecto",
-                        "Atencion",
-                        JOptionPane.WARNING_MESSAGE);
-                break;
-        }
+    
+     public class SumarFasores{
+        public double amplitud;
+        public boolean tipo_onda; // FALSE --> COSENO
+                                  // TRUE ---> SENO 
+        public double frecuencia;
+        public double desfasaje;
         
-    }//GEN-LAST:event_btn_transformarActionPerformed
+        SumarFasores(double amplitud,boolean tipo_onda,double frecuencia,double desfasaje) {
+            this.amplitud = amplitud;
+            this.tipo_onda = tipo_onda;
+            this.frecuencia = frecuencia;
+            this.desfasaje = desfasaje;
+        }
+    }
+        
+    private void btn_sumarFasoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sumarFasoresActionPerformed
+        
+    String fas1 = fasor1.getText();
+    parser pars1 = new parser(fas1,true);
+    if(pars1.armarNumero()==0) {
+        JOptionPane.showMessageDialog( null,
+            "Valor ingresado incorrecto",
+            "Atencion",
+            JOptionPane.WARNING_MESSAGE);
+            return;
+    }
+    String datos = fas1.substring(0,fas1.length()-1);
+    String ampli[]=datos.split("\\*");
+    
+    String form[]=ampli[1].split("\\(");
+    boolean tipo_ond;
+    
+    if(form[0].equals("cos")){
+        tipo_ond = false;
+    } else { 
+        tipo_ond = true;
+    }
+    String frec[]=form[1].split("t");
+    String desf[]=frec[1].split("\\)");
+   
+    SumarFasores fasorprim = new SumarFasores(Double.parseDouble(ampli[0]),tipo_ond,Double.parseDouble(frec[0]),Double.parseDouble(desf[0]));
+    String fas2 = fasor2.getText();
+    parser pars2 = new parser(fas2,true);
+    if(pars2.armarNumero()==0) {
+        JOptionPane.showMessageDialog( null,
+            "Valor ingresado incorrecto",
+            "Atencion",
+            JOptionPane.WARNING_MESSAGE);
+            return;
+    }
+    String datos2 = fas2.substring(0,fas2.length()-1);
+    ampli=datos2.split("\\*");
+    form=ampli[1].split("\\(");
+    if(form[0].equals("cos")){
+        tipo_ond = false;
+    } else { 
+        tipo_ond = true;
+    }
+    frec=form[1].split("t");
+    desf=frec[1].split("\\)");
+            
+    SumarFasores fasorseg = new SumarFasores(Double.parseDouble(ampli[0]),tipo_ond,Double.parseDouble(frec[0]),Double.parseDouble(desf[0]));
+            
+    if(fasorprim.frecuencia == fasorseg.frecuencia){
+        if(fasorprim.tipo_onda != fasorseg.tipo_onda){
+            if(!fasorprim.tipo_onda) { // coseno es fasorprim
+                fasorprim.tipo_onda=true;
+                fasorprim.desfasaje+=1.57;
+            } else{
+                fasorseg.tipo_onda=true;
+                fasorseg.desfasaje+=1.57;
+            }
+        }
+        Numero numero1 = new Numero(fasorprim.amplitud,fasorprim.desfasaje,true);
+        numero1.transformar();
+        Numero numero2 = new Numero(fasorseg.amplitud,fasorseg.desfasaje,true);
+        numero2.transformar();
+        Numero res = new Numero(numero1.a+numero2.a,numero1.b+numero2.b,false);
+        res.transformar();
+        res.redondear();
+        if(fasorprim.tipo_onda){
+            resultado.setText(res.a + "*sen(" + fasorprim.frecuencia + "t + " + res.b + ")");
+        } else {
+            resultado.setText(res.a + "*cos(" + fasorprim.frecuencia + "t + " + res.b + ")");
+        }
+    } else{ 
+            JOptionPane.showMessageDialog( null,
+            "Las frecuencias deben ser identicas",
+            "Atencion",
+            JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+    }//GEN-LAST:event_btn_sumarFasoresActionPerformed
 
-    private void numeroIngresadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroIngresadoActionPerformed
+    
+    private void fasor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fasor1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_numeroIngresadoActionPerformed
+    }//GEN-LAST:event_fasor1ActionPerformed
 
     private void resultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultadoActionPerformed
         // TODO add your handling code here:
@@ -207,6 +287,10 @@ public class EDT extends javax.swing.JFrame {
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void fasor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fasor2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fasor2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,17 +328,22 @@ public class EDT extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_transformar;
+    private javax.swing.JButton btn_sumarFasores;
+    private javax.swing.JTextField fasor1;
+    private javax.swing.JTextField fasor2;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelFondoRojo;
     private javax.swing.JLabel jLabelNcom;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField numeroIngresado;
     private javax.swing.JTextField resultado;
     // End of variables declaration//GEN-END:variables
 }
