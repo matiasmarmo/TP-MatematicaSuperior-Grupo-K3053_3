@@ -45,6 +45,7 @@ public class SF extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabelOperaciobesAvanzadas = new javax.swing.JLabel();
         fasor1 = new javax.swing.JTextField();
         fasor2 = new javax.swing.JTextField();
         btn_sumarFasores = new javax.swing.JButton();
@@ -67,23 +68,29 @@ public class SF extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Fasor 1 :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Fasor 2 :");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
-        jLabel7.setText("Nota: los fasores se deben escribir de la forma:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 290, -1));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel7.setText("Nota: los fasores se deben escribir de la forma: ");
+        jLabel7.setToolTipText("");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 290, 50));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         jLabel8.setText("Ejemplos: 3*cos(5t+3.14) ó 5*sen(5t+1.57)");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 290, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 290, 20));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         jLabel9.setText("ó 1*sen(8t+0.78) ó 5*sen(1t+0)");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 210, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 210, 20));
+
+        jLabelOperaciobesAvanzadas.setFont(new java.awt.Font("ISOCPEUR", 1, 30)); // NOI18N
+        jLabelOperaciobesAvanzadas.setText("SUMA DE FASORES");
+        getContentPane().add(jLabelOperaciobesAvanzadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 40));
 
         fasor1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         fasor1.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +98,7 @@ public class SF extends javax.swing.JFrame {
                 fasor1ActionPerformed(evt);
             }
         });
-        getContentPane().add(fasor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 210, 30));
+        getContentPane().add(fasor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 210, 30));
 
         fasor2.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         fasor2.addActionListener(new java.awt.event.ActionListener() {
@@ -343,6 +350,7 @@ public class SF extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelFondoRojo;
     private javax.swing.JLabel jLabelNcom;
+    private javax.swing.JLabel jLabelOperaciobesAvanzadas;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField resultado;
     // End of variables declaration//GEN-END:variables

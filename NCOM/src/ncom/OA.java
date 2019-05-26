@@ -162,9 +162,13 @@ public class OA extends javax.swing.JFrame {
             });
             getContentPane().add(jButtonAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
-            jTableResultados.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
             jTableResultados.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
+                    {null},
+                    {null},
+                    {null},
+                    {null},
+                    {null},
                     {null},
                     {null},
                     {null},
@@ -200,9 +204,10 @@ public class OA extends javax.swing.JFrame {
                     return canEdit [columnIndex];
                 }
             });
+            jTableResultados.setMinimumSize(new java.awt.Dimension(20, 240));
             jScrollPane1.setViewportView(jTableResultados);
 
-            getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 140, 270));
+            getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 160, 270));
 
             jPanel1.setBackground(new java.awt.Color(255, 255, 255));
             jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -250,6 +255,7 @@ public class OA extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
     private void btn_calcular_potencia_nsimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcular_potencia_nsimaActionPerformed
+        for(int i=0; i< 20; i++){ jTableResultados.setValueAt("",i,0); }
         String _base = base.getText();
         String _exponente = exponente.getText();
         parser baseOk = new parser(_base,false);
@@ -331,11 +337,11 @@ public class OA extends javax.swing.JFrame {
     private void btn_calcular_raiz_nsimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcular_raiz_nsimaActionPerformed
         String _radicando = radicando.getText();
         String _indice = indice.getText();
-        for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
+        for(int i=0; i< jTableResultados.getRowCount(); i++){ jTableResultados.setValueAt("",i,0); }
         parser radicandoOk = new parser(_radicando,false);
         parser indiceOk = new parser(_indice,false);
         if("".equals(_radicando) || "".equals(_indice)){
-            for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
+            for(int i=0; i< 20; i++){ jTableResultados.setValueAt("",i,0); }
              JOptionPane.showMessageDialog( null,
                                            "No se ingresaron datos",
                                            "Atencion",
@@ -346,8 +352,12 @@ public class OA extends javax.swing.JFrame {
                                            "El indice es incorrecto",
                                            "Atencion",
                                            JOptionPane.WARNING_MESSAGE);
-        }
-        else{
+        }else if(indiceOk.esMasGrandeQueElMaximo(20)){
+            JOptionPane.showMessageDialog( null,
+                                           "El indice es muy grande",
+                                           "Atencion",
+                                           JOptionPane.WARNING_MESSAGE);
+        }else{
             String complejos[] = _radicando.substring(1,_radicando.length()-1).split(",");
             double parteReal;
             double parteImaginaria;
@@ -402,11 +412,11 @@ public class OA extends javax.swing.JFrame {
     private void btn_calcular_raiz_primitivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcular_raiz_primitivaActionPerformed
         String _radicandoPrimitiva = radicando.getText();
         String _indicePrimitiva = indice.getText();
-        for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
+        for(int i=0; i< jTableResultados.getRowCount(); i++){ jTableResultados.setValueAt("",i,0); }
         parser radicandoOk = new parser(_radicandoPrimitiva,false);
         parser indiceOk = new parser(_indicePrimitiva,false);
         if("".equals(_radicandoPrimitiva) || "".equals(_indicePrimitiva)){
-             for(int i=0; i< 14; i++){ jTableResultados.setValueAt("",i,0); }
+             for(int i=0; i< 21; i++){ jTableResultados.setValueAt("",i,0); }
              JOptionPane.showMessageDialog( null,
                                            "No se ingresaron datos",
                                            "Atencion",
@@ -416,8 +426,12 @@ public class OA extends javax.swing.JFrame {
                                            "El indice es incorrecto",
                                            "Atencion",
                                            JOptionPane.WARNING_MESSAGE);
-        }
-        else{
+        }else if(indiceOk.esMasGrandeQueElMaximo(21)){
+            JOptionPane.showMessageDialog( null,
+                                           "El indice es muy grande",
+                                           "Atencion",
+                                           JOptionPane.WARNING_MESSAGE);
+        }else{
             String complejos[] = _radicandoPrimitiva.substring(1,_radicandoPrimitiva.length()-1).split(",");
             double parteReal;
             double parteImaginaria;

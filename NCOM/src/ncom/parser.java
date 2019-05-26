@@ -92,11 +92,13 @@ public class parser {
     private boolean verificarNumeros(String numero){
         int i;
         int punto = 0;
+        if(this.esLetra(numero.charAt(0))){ return false; }
         for(i=0;i<numero.length();i++){
             if(numero.charAt(i) < '0' && numero.charAt(i) > '9' && numero.charAt(i) != '.' && punto < 2 && numero.charAt(i) != '-'){  
                 return false;
             }
             if(numero.charAt(i) == '.'){ punto++; } 
+            if(this.esLetra(numero.charAt(i))){ return false; }
         }
         return true;
     }
@@ -120,5 +122,14 @@ public class parser {
         }
         return true;
     }
-    
+    public boolean esMasGrandeQueElMaximo(int maximo){
+        int i;
+        if(Integer.parseInt(mensaje) > maximo){return true;}
+        return false;
+    }
+    public boolean esLetra(char caracter){
+        if(caracter > 'a' && caracter < 'z'){ return true; } 
+        else if(caracter > 'A' && caracter < 'Z'){ return true; }
+        return false;
+    }
 }
